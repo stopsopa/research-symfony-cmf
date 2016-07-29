@@ -1,6 +1,11 @@
-app:
-    resource: '@AppBundle/Controller/'
-    type:     annotation
+test_test:
+    resource: "@TestTestBundle/Resources/config/routing.xml"
+    prefix:   /
+
+# AcmeDemoBundle routes (to be removed)
+_demo:
+    resource: "@AcmeDemoBundle/Resources/config/routing.yml"
+    prefix: /demo
 
 _cmf_create:
-    resource: '@CmfCreateBundle/Resources/config/routing/rest.xml'
+    resource: "@CmfCreateBundle/Resources/config/routing/rest.xml"

@@ -1,6 +1,6 @@
 # Symfony CMF Standard Edition
 
-[![Build Status](https://secure.travis-ci.org/symfony-cmf/standard-edition.png?branch=master)](http://travis-ci.org/symfony-cmf/standard-edition)
+[![Build Status](https://secure.travis-ci.org/symfony-cmf/standard-edition.png?branch=1.2)](http://travis-ci.org/symfony-cmf/standard-edition)
 [![Latest Stable Version](https://poser.pugx.org/symfony-cmf/standard-edition/version.png)](https://packagist.org/packages/symfony-cmf/standard-edition)
 [![Total Downloads](https://poser.pugx.org/symfony-cmf/standard-edition/d/total.png)](https://packagist.org/packages/symfony-cmf/standard-edition)
 
@@ -11,10 +11,12 @@ and licensed under the [MIT License](LICENSE).
 This distribution is based on all the main CMF components needed for most common
 use cases, and can be used to create a new Symfony/CMF project from scratch.
 
+
 ## Requirements
 
 * Symfony 2.3.x
 * See also the `require` section of [composer.json](composer.json)
+
 
 ## Documentation
 
@@ -27,9 +29,10 @@ See also:
 * [All Symfony CMF documentation](http://symfony.com/doc/master/cmf/index.html) - complete Symfony CMF reference
 * [Symfony CMF Website](http://cmf.symfony.com/) - introduction, live demo, support and community links
 
+
 ## Contributing
 
-Pull requests are welcome. Please see our [CONTRIBUTING](https://github.com/symfony-cmf/symfony-cmf-docs/blob/master/CONTRIBUTING.md) guide.
+Pull requests are welcome. Please see our [CONTRIBUTING](CONTRIBUTING.md) guide.
 
 Unit and/or functional tests exist for this bundle. See the
 [Testing documentation](http://symfony.com/doc/master/cmf/components/testing.html)

@@ -4,34 +4,20 @@ php:
   - 5.3
   - 5.4
   - 5.5
-  - 7.0
+  - 5.6
   - hhvm
 
-sudo: false
-
-cache:
-  directories:
-    - $HOME/.composer/cache
-
-env:
-  global:
-    - SYMFONY_DEPRECATIONS_HELPER=34
-
 matrix:
-  finish_fast: true
-  include:
-    - php: 5.6
-      env: COMPOSER_CMD=install
-
-before_install:
-  - if [[ "$TRAVIS_PHP_VERSION" != "hhvm" ]]; then echo "memory_limit = -1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini; fi
-  - phpenv config-rm xdebug.ini || true
-  - composer self-update
-
-install: if [ "$COMPOSER_CMD" = "install" ]; then composer install --prefer-dist; else composer update --prefer-dist; fi
+  allow_failures:
+    - php: hhvm
 
 before_script:
-  - app/console doctrine:phpcr:init:dbal --force -e=test
+  - if [[ "$TRAVIS_PHP_VERSION" != "hhvm" ]]; then echo "memory_limit = -1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini; fi
+  - composer self-update
+  - composer install --prefer-source
+  - app/console doctrine:database:create -e=test
+  - app/console doctrine:phpcr:init:dbal -e=test
+  - app/console doctrine:phpcr:workspace:create standard_test -e=test
   - app/console doctrine:phpcr:repository:init -e=test
 
 script: phpunit -c app

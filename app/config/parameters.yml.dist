@@ -1,31 +1,19 @@
-# This file is a 'template' of what your parameters.yml file should look like
-# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
-# http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
 parameters:
+    database_driver:   pdo_sqlite
     database_host:     ~
     database_port:     ~
     database_name:     ~
     database_user:     ~
     database_password: ~
-    database_path:     '%kernel.root_dir%/app.sqlite'
+    database_path:     "%kernel.root_dir%/app.sqlite"
 
     phpcr_backend:
-        # if you're using Jackalope Doctrine DBAL
+        # use Jackalope Doctrine DBAL
         type: doctrinedbal
         connection: default
         caches:
             meta: doctrine_cache.providers.phpcr_meta
             nodes: doctrine_cache.providers.phpcr_nodes
-        
-        # if you're using Jackalope Jackrabbit, comment the lines above
-        # and uncomment the lines after this comment
-        # type: jackrabbit
-        # url: http://localhost:8080/server/
-
-        # You can enable logging and profiling with the Symfony Toolbar by
-        # uncommenting the respective lines below
-        # logging: true
-        # profiling: true
     phpcr_workspace:   default
     phpcr_user:        admin
     phpcr_password:    admin
@@ -35,8 +23,8 @@ parameters:
     mailer_user:       ~
     mailer_password:   ~
 
-    # A secret key that's used to generate certain security-related tokens
-    secret: ThisTokenIsNotSoSecretChangeIt
+    locale:            en
+    secret:            ThisTokenIsNotSoSecretChangeIt
 
     debug_toolbar:          true
     debug_redirects:        false
