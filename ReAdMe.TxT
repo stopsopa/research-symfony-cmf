@@ -11,10 +11,20 @@ con doctrine:phpcr:repository:init
 # once again started from :
 http://symfony.com/doc/master/cmf/quick_tour/the_big_picture.html
 
+# To start working with symfony-cmf install version from documentation
+ 	http://symfony.com/doc/current/cmf/book/installation.html#installation
+ 		composer create-project symfony-cmf/standard-edition <path-to-install> "~1.2" 
+ 	and to be ready to switch database to jackrabbit you need to add to composer.json
+ 		"jackalope/jackalope-jackrabbit": "*"
+ 	sometimes after adding this it will be necessary to remove composer.lock and vendors
+ 	and run composer install once again 	
+
 
 
         php app/console doctrine:database:create
         php app/console doctrine:phpcr:init:dbal --force
+
+        # if working with jackrabbit start from here 
         php app/console doctrine:phpcr:workspace:purge --force
         php app/console doctrine:phpcr:repository:init
 
@@ -25,7 +35,8 @@ http://symfony.com/doc/master/cmf/quick_tour/the_big_picture.html
         php app/console doctrine:phpcr:node:dump --props
 
 
-
+teraz powinno być dostępne z przeglądarki tutaj:
+	http://rabbit.test:8080/
 
 content repository jackrabbit jackalope midgard2
 
