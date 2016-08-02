@@ -15,6 +15,7 @@
         <field name="name" type="string" />
         <field name="surname" type="string" nullable="true" />
         <field name="multi" type="string" multivalue="true" />
+        <field name="modified" type="date" multivalue="true" />
     </document>
 
 </doctrine-mapping>

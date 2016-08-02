@@ -8,6 +8,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 use Test\TestBundle\Document\TestDocumentExample;
+use DateTime;
 
 class CreateCommand extends ContainerAwareCommand {
     protected function configure()
@@ -31,12 +32,19 @@ class CreateCommand extends ContainerAwareCommand {
 //        $docMan = $dp->getManagerForClass(Page::class);
         $man = $dp->getManagerForClass(TestDocumentExample::class);
 
-        $example = new TestDocumentExample();
+        $path = '/cms/simple/name-value';
+
+        $example = $man->find(null, $path);
+
+        if (!$example) {
+            $example = new TestDocumentExample();
+        }
 
         $example
-            ->setName('name vale23')
+            ->setName('name value')
             ->setSurname('surname val')
             ->setMulti(array('one', 'two'))
+            ->setModified(new DateTime())
         ;
 
         $man->persist($example);

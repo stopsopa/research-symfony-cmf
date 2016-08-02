@@ -31,9 +31,7 @@ class FetchCommand extends ContainerAwareCommand {
         /* @var $dp ManagerRegistry */
         $man = $dp->getManagerForClass(TestDocumentExample::class);
 
-
-
-        $doc = $man->find(null, '/cms/simple/name-vale23');
+        $doc = $man->find(null, '/cms/simple/name-value');
 
         $d = (array)$doc;
         print_r($d);

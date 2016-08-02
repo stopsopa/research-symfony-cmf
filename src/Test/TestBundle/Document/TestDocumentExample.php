@@ -26,6 +26,7 @@ class TestDocumentExample{
     protected $name;
     protected $surname;
     protected $multi;
+    protected $modified;
 
     public function __construct()
     {
@@ -104,5 +105,25 @@ class TestDocumentExample{
         $this->multi = $multi;
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getModified()
+    {
+        return $this->modified;
+    }
+
+    /**
+     * @param mixed $modified
+     * @return TestDocumentExample
+     */
+    public function setModified($modified)
+    {
+        $this->modified = $modified;
+        return $this;
+    }
+
+
 
 }
