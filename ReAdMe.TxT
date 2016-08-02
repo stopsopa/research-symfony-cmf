@@ -8,6 +8,11 @@ con doctrine:phpcr:init:dbal --force
 
 con doctrine:phpcr:repository:init
 
+# another browser/online manager: 	
+	https://github.com/marmelab/phpcr-browser
+	http://i.imgur.com/eAI2vbT.png
+	g(PHPCR Browser provides an intuitive web interface to explore and manage PHPCR repositories)
+
 # once again started from :
 http://symfony.com/doc/master/cmf/quick_tour/the_big_picture.html
 
@@ -20,11 +25,16 @@ http://symfony.com/doc/master/cmf/quick_tour/the_big_picture.html
  	and run composer install once again 	
 
 
+ 		# on init
+ 		composer run-script --dev post-install-cmd
+        php app/console assets:install --symlink --relative
 
-        php app/console doctrine:database:create
-        php app/console doctrine:phpcr:init:dbal --force
+			# only if db is in other db then jackrabbit  
+	        php app/console doctrine:database:create
+	        php app/console doctrine:phpcr:init:dbal --force
 
         # if working with jackrabbit start from here 
+
         php app/console doctrine:phpcr:workspace:purge --force
         php app/console doctrine:phpcr:repository:init
 
@@ -32,7 +42,13 @@ http://symfony.com/doc/master/cmf/quick_tour/the_big_picture.html
         php app/console doctrine:phpcr:migrator:migrate page --identifier=/cms/simple/quick_tour
         php app/console doctrine:phpcr:fixtures:load --append --no-interaction
 
+        # to see what is inside:
+        php app/console doctrine:phpcr:node:dump
         php app/console doctrine:phpcr:node:dump --props
+		php app/console doctrine:phpcr:mapping:info        
+
+
+	
 
 
 teraz powinno być dostępne z przeglądarki tutaj:

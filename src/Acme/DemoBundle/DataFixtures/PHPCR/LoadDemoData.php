@@ -11,6 +11,7 @@ use Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode;
 
 /**
  * Loads the initial demo data of the demo website.
+ * Acme\DemoBundle\DataFixtures\PHPCR\LoadDemoData
  */
 class LoadDemoData implements FixtureInterface
 {

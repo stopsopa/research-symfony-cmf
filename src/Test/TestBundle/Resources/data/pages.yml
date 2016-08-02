@@ -1,6 +1,15 @@
+# src/Acme/DemoBundle/Resources/data/pages.yml
 Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:
-    quick_tour:
+
+    quick_tour2:
         id: /cms/simple/quick_tour
         label: "Quick Tour"
         title: "Reading the Quick Tour"
         body: "I've added this page while reading the quick tour"
+
+Test\TestBundle\Doctrine\Phpcr\Test:
+
+    testnew:
+        id: /cms/simple/testnew
+        name: "test name"
+        surname: "test surname"
