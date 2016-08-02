@@ -25,14 +25,18 @@ class FetchCommand extends ContainerAwareCommand {
         /* @var $dp ManagerRegistry */
         $dp = $this->getContainer()->get('doctrine_phpcr');
                 
-        die(var_dump(get_class($dp)));
+//        die(var_dump(get_class($dp)));
 
         /* @var $dp ObjectManager */
         /* @var $dp ManagerRegistry */
         $man = $dp->getManagerForClass(TestDocumentExample::class);
 
-        $doc = $man->find(null, '/cms/simple/name-value');
 
+
+        $doc = $man->find(null, '/cms/simple/name-vale23');
+
+        $d = (array)$doc;
+        print_r($d);
         die(var_dump(get_class($doc)));
     }
 }

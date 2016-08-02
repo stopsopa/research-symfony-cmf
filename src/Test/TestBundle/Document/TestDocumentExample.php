@@ -25,6 +25,12 @@ class TestDocumentExample{
     protected $id;
     protected $name;
     protected $surname;
+    protected $multi;
+
+    public function __construct()
+    {
+        $this->multi = array();
+    }
 
     /**
      * @return mixed
@@ -80,4 +86,23 @@ class TestDocumentExample{
         $this->surname = $surname;
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getMulti()
+    {
+        return $this->multi;
+    }
+
+    /**
+     * @param mixed $multi
+     * @return TestDocumentExample
+     */
+    public function setMulti($multi)
+    {
+        $this->multi = $multi;
+        return $this;
+    }
+
 }

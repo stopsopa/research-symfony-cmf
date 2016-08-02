@@ -12,8 +12,9 @@
         <id name="id" type="id">
             <generator strategy="repository" />
         </id>
-        <field name="name" type="string"/>
-        <field name="surname" type="string" nullable="true"/>
+        <field name="name" type="string" />
+        <field name="surname" type="string" nullable="true" />
+        <field name="multi" type="string" multivalue="true" />
     </document>
 
 </doctrine-mapping>

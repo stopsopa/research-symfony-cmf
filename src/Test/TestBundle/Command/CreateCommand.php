@@ -34,8 +34,9 @@ class CreateCommand extends ContainerAwareCommand {
         $example = new TestDocumentExample();
 
         $example
-            ->setName('name vale')
+            ->setName('name vale23')
             ->setSurname('surname val')
+            ->setMulti(array('one', 'two'))
         ;
 
         $man->persist($example);
