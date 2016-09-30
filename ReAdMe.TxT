@@ -56,7 +56,7 @@ to explore data inside jackrabbit :
 	http://phpcr.readthedocs.io/en/latest/phpcr-shell/installation.html
 
 	wget link from github
-	mv file.phar /usr/local/bin/phpcrsh
+	mv phpcrsh.phar /usr/local/bin/phpcrsh
 	chmod a+x /usr/local/bin/phpcrsh
 
 	this will create profile 'myprofile' and store it in ~/.phpcrsh/profiles/myprofile.yml
