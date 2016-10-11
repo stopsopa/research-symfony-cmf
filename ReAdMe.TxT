@@ -51,6 +51,8 @@ teraz powinno być dostępne z przeglądarki tutaj:
 
 inne "content repository" : jackrabbit jackalope midgard2
 
+
+==== PHPCRSH ====== vvv
 to explore data inside jackrabbit :
 	https://github.com/phpcr/phpcr-shell/releases/
 	http://phpcr.readthedocs.io/en/latest/phpcr-shell/installation.html
@@ -73,12 +75,53 @@ to explore data inside jackrabbit :
 	# later traverse using 'pwd', 'ls' and 'cd' commands
 	# you can see what are these aliases by typing 'aliases'
 	# AVAILABLE COMMANDS:
-		# save, refresh
-		# SELECT * FROM [nt:unstructured];
+		save, refresh
+		shell:alias:list
+			# from http://phpcr.readthedocs.io/en/latest/phpcr-shell/configuration.html
+		ls -L2
+			# from http://phpcr.readthedocs.io/en/latest/phpcr-shell/interacting.html
+		ls /cms/lh/pages/therapies/*/*
+		php app/console doctrine:phpcr:shell "node:list -L2"
+		 	# from http://phpcr.readthedocs.io/en/latest/phpcr-shell/connecting.html#connect-to-an-embedded-phpcr-shell
 
 	# eploring options:
 		# http://phpcr.readthedocs.io/en/latest/phpcr-shell/querying.html#array-replace
 			# PHPCRSH> UPDATE [nt:unstructured] SET tags = array_replace(tags, 'Planes', NULL)
+			
+	# useful queries : 
+	SELECT * FROM [nt:unstructured];  - typ pola jest pod jcr:primaryType
+	select * from [rep:root];
+	select [nt:unstructured].[allowChildren] from [nt:unstructured];   
+	select [nt:unstructured].[allowChildren] from [nt:unstructured] order by [nt:unstructured].[allowChildren] desc;
+		# from http://phpcr.readthedocs.io/en/latest/book/query.html
+		
+	
+==== PHPCRSH ====== ^^^
+
+===== QUERY BUILDER ===== 
+
+        /* @var $dm DocumentManager; */
+        $dm = $this->container->get('doctrinePhpcr')->getManager();
+
+        $session = $dm->getPhpcrSession();
+
+        $qb = $dm->createQueryBuilder();
+
+        $qb->fromDocument('Cms\CoreBundle\Document\Page', 'p');
+
+        $path = "/cms/{$this->container->getParameter('site')}/pages/about";
+
+        $qb->where()->descendant("/cms/{$this->container->getParameter('site')}/pages/about", 'p')->end();
+
+        $qb->andWhere()->same($path . "/obry", 'p')->end();
+
+        $qb->orderBy()->asc()->field('p.sortOrder')->end();
+
+        $qb->setMaxResults(2);
+
+        $list = $qb->getQuery()->getResult();
+	
+===== QUERY BUILDER ===== 
 
 	/cms/aml/pages/aml-today
 
