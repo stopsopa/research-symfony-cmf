@@ -98,7 +98,7 @@ to explore data inside jackrabbit :
 	
 ==== PHPCRSH ====== ^^^
 
-===== QUERY BUILDER ===== 
+===== QUERY BUILDER ===== vvv
 
         /* @var $dm DocumentManager; */
         $dm = $this->container->get('doctrinePhpcr')->getManager();
@@ -121,7 +121,7 @@ to explore data inside jackrabbit :
 
         $list = $qb->getQuery()->getResult();
 	
-===== QUERY BUILDER ===== 
+===== QUERY BUILDER ===== ^^^
 
 	/cms/aml/pages/aml-today
 
