@@ -100,7 +100,7 @@ to explore data inside jackrabbit :
 
 ===== QUERY BUILDER ===== vvv
 
-        /* @var $dm DocumentManager; */
+        /* @var $dm \Doctrine\ODM\PHPCR\DocumentManager; */
         $dm = $this->container->get('doctrinePhpcr')->getManager();
 
         $session = $dm->getPhpcrSession();
