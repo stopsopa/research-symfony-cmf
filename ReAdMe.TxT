@@ -91,6 +91,7 @@ to explore data inside jackrabbit :
 	# useful queries : 
 	SELECT * FROM [nt:unstructured];  - typ pola jest pod jcr:primaryType
 	select * from [rep:root];
+	ls -L6 --children    - zwarty listing samej struktury drzewa
 	select [nt:unstructured].[allowChildren] from [nt:unstructured];   
 	select [nt:unstructured].[allowChildren] from [nt:unstructured] order by [nt:unstructured].[allowChildren] desc;
 		# from http://phpcr.readthedocs.io/en/latest/book/query.html
