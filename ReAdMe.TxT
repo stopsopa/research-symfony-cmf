@@ -131,7 +131,7 @@ to explore data inside jackrabbit :
 	  1 => "/cms/pages/two"
 	  2 => "/cms/pages/three"
 	];
-        $list = $odm->findMany(null, $ids);
+        $list = $odm->findMany(null, $ids); // findMany maintain order of keys and fetch in the same order
 ====== where id in ===== 
 
 	/cms/aml/pages/aml-today
