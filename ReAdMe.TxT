@@ -124,6 +124,16 @@ to explore data inside jackrabbit :
 	
 ===== QUERY BUILDER ===== ^^^
 
+====== where id in ===== 
+	$odm = App::get('doctrine_phpcr')->getManager();
+	$ids = array:4 [▼
+	  0 => "/cms/pages/one"
+	  1 => "/cms/pages/two"
+	  2 => "/cms/pages/three"
+	];
+        $list = $odm->findMany(null, $ids);
+====== where id in ===== 
+
 	/cms/aml/pages/aml-today
 
 	*   If you login from cli or from command sf2
