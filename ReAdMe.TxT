@@ -75,7 +75,7 @@ to explore data inside jackrabbit :
 	# later traverse using 'pwd', 'ls' and 'cd' commands
 	# you can see what are these aliases by typing 'aliases'
 	# AVAILABLE COMMANDS:
-		save, refresh
+		save, refresh (s, r - shortcuts)
 		shell:alias:list
 			# from http://phpcr.readthedocs.io/en/latest/phpcr-shell/configuration.html
 		ls -L2
