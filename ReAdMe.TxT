@@ -122,6 +122,9 @@ to explore data inside jackrabbit :
 
         $list = $qb->getQuery()->getResult();
 	
+	fullsearch caseinsensitive
+            $qb->andWhere()->like()->lowercase()->field('n.title')->end()->literal("%$search%");
+	
 ===== QUERY BUILDER ===== ^^^
 
 ====== where id in ===== 
