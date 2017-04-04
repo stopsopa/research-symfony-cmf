@@ -158,7 +158,10 @@ to explore data inside jackrabbit :
 	g(PHPCR Browser provides an intuitive web interface to explore and manage PHPCR repositories)
 
 
-
+# ----- pure queries examples ---- vvv
+SELECT * FROM [nt:unstructured] AS n WHERE ((n.[drugs] IS NOT NULL));
+SELECT n.[drugs] FROM [nt:unstructured] AS n WHERE ((n.[drugs] IS NOT NULL));
+# ----- pure queries examples ---- ^^^
 
 
 
