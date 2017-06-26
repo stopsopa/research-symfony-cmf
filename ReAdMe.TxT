@@ -99,7 +99,9 @@ to explore data inside jackrabbit :
 	
 ==== PHPCRSH ====== ^^^
 
-===== QUERY BUILDER ===== vvv
+===== QUERY BUILDER ===== vvv 
+
+# useful link http://phpcr.github.io/slides.html#28
 
         /* @var $dm \Doctrine\ODM\PHPCR\DocumentManager; */
         $dm = $this->container->get('doctrinePhpcr')->getManager();
