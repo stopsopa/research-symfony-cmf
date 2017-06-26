@@ -126,6 +126,9 @@ to explore data inside jackrabbit :
 	
 	fullsearch caseinsensitive
             $qb->andWhere()->like()->lowercase()->field('n.title')->end()->literal("%$search%");
+	    
+        # count	
+	    $qb->getQuery()->getResult()->count()
 	
 ===== QUERY BUILDER ===== ^^^
 
