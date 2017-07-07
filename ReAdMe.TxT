@@ -115,6 +115,8 @@ to explore data inside jackrabbit :
         $path = "/cms/{$this->container->getParameter('site')}/pages/about";
 
         $qb->where()->descendant("/cms/{$this->container->getParameter('site')}/pages/about", 'p')->end();
+	
+	$qb->andWhere()->not()->eq()->field('p.publishable')->literal('yes');
 
         $qb->andWhere()->same($path . "/obry", 'p')->end();
 
